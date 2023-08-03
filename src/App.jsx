@@ -5,20 +5,20 @@ function App() {
   const dispatch = useDispatch();
   const cash = useSelector((state) => state.cash.cash);
 
-  const addCash = () => {
-    dispatch({type: 'ADD_CASH', payload: 5});
+  const addCash = (cash) => {
+    dispatch({type: 'ADD_CASH', payload: cash});
   };
 
-  const getCash = () => {
-    dispatch({type: 'GET_CASH', payload: 5});
+  const getCash = (cash) => {
+    dispatch({type: 'GET_CASH', payload: cash});
   };
 
   return (
     <div className='App'>
       <p style={{fontSize: 24}}>{cash}</p>
       <div style={{display: 'flex', width: 'fit-content', margin: '0 auto'}}>
-        <button onClick={() => addCash()}>Пополнить</button>
-        <button onClick={() => getCash()}>Снять</button>
+        <button onClick={() => addCash(Number(prompt('Введите сумму')))}>Пополнить</button>
+        <button onClick={() => getCash(Number(prompt('Введите сумму')))}>Снять</button>
       </div>
     </div>
   );
