@@ -4,6 +4,7 @@ const initialState = {
 
 export const ADD_CUSTOMER = 'redux-ul/customerReducer/ADD_CUSTOMER';
 export const ADD_MANY_CUSTOMERS = 'redux-ul/customerReducer/ADD_MANY_CUSTOMERS';
+export const ASYNC_ADD_MANY_CUSTOMERS = 'redux-ul/customerReducer/ASYNC_ADD_MANY_CUSTOMERS';
 export const REMOVE_CUSTOMER = 'redux-ul/customerReducer/REMOVE_CUSTOMER';
 
 export const customerReducer = (state = initialState, action) => {

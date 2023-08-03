@@ -1,8 +1,10 @@
 import './App.css';
 import { useDispatch, useSelector } from "react-redux";
-import { addCustomerAction, removeCustomerAction } from "src/redux/actionCreators/customerActionsCreators";
+import {
+  addCustomerAction, asyncAddManyCustomersAction,
+  removeCustomerAction
+} from "src/redux/actionCreators/customerActionsCreators";
 import { asyncAddCashAction, asyncGetCashAction} from "src/redux/actionCreators/cashActionsCreators";
-import { fetchCustomers } from "src/redux/asyncActions/customers";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,7 +38,7 @@ function App() {
         <button onClick={() => addCash()}>Пополнить</button>
         <button onClick={() => getCash()}>Снять</button>
         <button onClick={() => addCustomer(prompt('Введите имя клиента'))}>Добавить клиента</button>
-        <button onClick={() => dispatch(fetchCustomers())}>Получить клиентов из базы</button>
+        <button onClick={() => dispatch(asyncAddManyCustomersAction())}>Получить клиентов из базы</button>
       </div>
       {
         customers.length > 0 ?
