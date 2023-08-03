@@ -3,7 +3,9 @@ const initialState = {
 }
 
 export const ADD_CASH = 'redux-ul/cashReducer/ADD_CASH';
+export const ASYNC_ADD_CASH = 'redux-ul/cashReducer/ASYNC_ADD_CASH';
 export const GET_CASH = 'redux-ul/cashReducer/GET_CASH';
+export const ASYNC_GET_CASH = 'redux-ul/cashReducer/ASYNC_GET_CASH';
 
 export const cashReducer = (state = initialState, action) => {
   switch(action.type) {
